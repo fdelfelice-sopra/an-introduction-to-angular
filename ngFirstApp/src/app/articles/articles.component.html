@@ -1,3 +1,20 @@
-<p>
-  articles works!
-</p>
+
+<h1>{{articlesTitle}}</h1>
+
+<div class="row articles">
+  <div class="article col-sm-6 col-md-4" *ngFor="let articleNum of articlesList" >
+    <h2 class="h4">{{articlesPrefix + ':'}} {{articleNum}}</h2>
+    <p>
+        <img class="img-fluid rounded"  src="https://placeimg.com/640/480/tech?1">
+    </p>
+    <p>
+      <span class="badge badge-secondary">tech</span>
+    </p>
+    <p *ngIf="articleNum !== 'Third'">
+        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+    </p>
+    <p>
+      <a class="btn btn-primary" href="#" role="button">like</a> <!-- btn-success -->
+    </p>
+  </div>
+</div>

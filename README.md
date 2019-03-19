@@ -15,7 +15,7 @@ And then add
 @import "~font-awesome/css/font-awesome.min.css";
 in styles.less
 
-A look inside files in src folder: 
+A look inside files in /src folder: 
 /index.html
 /main.ts
 /style.less
@@ -28,4 +28,9 @@ A look inside files in src folder:
 Create your first component : articles
  ng g c articles
 
-have a look in app folder, and in /app/app.modules
+have a look in /app folder, and in /app/app.modules
+
+Binding: communication between components class and its template, often passing data
+Interpolation ({{articlesPrefix}})
+
+Directives: ngFor and ngIf
