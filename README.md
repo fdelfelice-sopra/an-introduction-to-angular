@@ -39,3 +39,5 @@ Property binding:
 < img [src]='thePropertyBinded' > === < img src={{thePropertyBinded}} >
 < img [style.width.px]='thePropertyBinded' >
 
+Event binding
+< button (click)='theMethod()' >

@@ -12,6 +12,11 @@ export class ArticlesComponent implements OnInit {
   imgWidth : number = 640;
   imgHeight : number = 480;
   imgUrl : string = '//placeimg.com/'+this.imgWidth+'/'+this.imgHeight+'/tech?1';
+  likedNum : number;
+
+  likeThis(who:number): void{
+    this.likedNum = who+1;
+  }
 
   constructor() { }
 
