@@ -41,3 +41,4 @@ Property binding:
 
 Event binding
 < button (click)='theMethod()' >
+

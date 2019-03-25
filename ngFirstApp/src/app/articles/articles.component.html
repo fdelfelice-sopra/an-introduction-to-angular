@@ -1,10 +1,20 @@
 
-<h1>{{articlesTitle}}</h1>
+<h1>{{articlesTitle}} - grid: col-xs-{{columns}}</h1>
 
-<h6 *ngIf='likedNum > 0'>Just liked: article #{{likedNum}}</h6>
+<h6 *ngIf='likedNum > 0'><i class="fa fa-heart"></i> Just liked: article #{{likedNum}}</h6>
+
+
+
+<div class="alert alert-secondary text-center">
+  <label>Grid: col-xs-</label><input [(ngModel)]='columns' type="number" />
+</div>
+
+
+
+
 
 <div class="row articles">
-  <div class="article col-sm-6 col-md-4" *ngFor="let articleNum of articlesList ; let i = index;" >
+  <div class="article col-sm-{{columns}}" *ngFor="let articleNum of articlesList ; let i = index;" >
     <h2 class="h4">{{articlesPrefix + ':'}} {{articleNum}}</h2>
     <p>
         <img class="img-fluid rounded"  src="//placeimg.com/{{imgWidth}}/{{imgHeight}}/tech?{{articleNum}}">
