@@ -5,7 +5,8 @@
   <div class="article col-sm-6 col-md-4" *ngFor="let articleNum of articlesList" >
     <h2 class="h4">{{articlesPrefix + ':'}} {{articleNum}}</h2>
     <p>
-        <img class="img-fluid rounded"  src="https://placeimg.com/640/480/tech?1">
+        <img class="img-fluid rounded"  src="//placeimg.com/{{imgWidth}}/{{imgHeight}}/tech?{{articleNum}}">
+        <!-- <img class="img-fluid rounded"  [src]='imgUrl'> -->
     </p>
     <p>
       <span class="badge badge-secondary">tech</span>

@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articles.component.less']
 })
 export class ArticlesComponent implements OnInit {
-  articlesTitle: string = "Articles";
-  articlesPrefix: string = "Article";
+  articlesTitle: string = 'Articles';
+  articlesPrefix : string = 'Article';
   articlesList : any[] = ['First','Second','Third'];
+  imgWidth : number = 640;
+  imgHeight : number = 480;
+  imgUrl : string = '//placeimg.com/'+this.imgWidth+'/'+this.imgHeight+'/tech?1';
 
   constructor() { }
 

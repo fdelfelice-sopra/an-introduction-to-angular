@@ -1,13 +1,13 @@
 # an-introduction-to-angular
 
-Clone project
+Project cloning: what's included in a Angular git project
 
 App folder: ngFirstApp
 
-To install dependencies
+Install dependencies
 Npm update 
 
-To install FE stuff:
+Install FE stuff:
 Npm install bootstrap font-awesome 
 
 And then add 
@@ -33,4 +33,9 @@ have a look in /app folder, and in /app/app.modules
 Binding: communication between components class and its template, often passing data
 Interpolation ({{articlesPrefix}})
 
-Directives: ngFor and ngIf
+Structural directives: *ngFor and *ngIf
+
+Property binding: 
+< img [src]='thePropertyBinded' > === < img src={{thePropertyBinded}} >
+< img [style.width.px]='thePropertyBinded' >
+
