@@ -15,7 +15,7 @@
 
 <div class="row articles">
   <div class="article col-sm-{{columns}}" *ngFor="let articleNum of articlesList ; let i = index;" >
-    <h2 class="h4">{{articlesPrefix + ':'}} {{articleNum}}</h2>
+    <h2 class="h4">{{articleNum | addPrefix: articlesPrefix  }}</h2>
     <p>
         <img class="img-fluid rounded"  src="//placeimg.com/{{imgWidth}}/{{imgHeight}}/tech?{{articleNum}}">
         <!-- <img class="img-fluid rounded"  [src]='imgUrl'> -->

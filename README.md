@@ -42,3 +42,6 @@ Property binding:
 Event binding
 < button (click)='theMethod()' >
 
+Styling Components
+
+Pipes: transforming data
