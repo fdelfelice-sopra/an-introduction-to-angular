@@ -47,5 +47,4 @@ Styling Components
 Pipes: transforming data for a better presentation
 Create a custom pipe: ng g p shared/addPrefix
 
-
-
+Retrieve page's Data: hard-coded data

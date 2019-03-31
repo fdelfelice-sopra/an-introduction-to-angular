@@ -1,4 +1,15 @@
 
+
+<h4>Listing Array's elements</h4>
+<div>
+    <ul class="list-unstyled">
+      <li  *ngFor="let articleNum of articlesFirtsList ; let i = index;" >
+      {{articleNum | uppercase  }}
+      </li>
+    </ul>
+</div>
+
+
 <h1>{{articlesTitle}} - grid: col-xs-{{columns}}</h1>
 
 <h6 *ngIf='likedNum > 0'><i class="fa fa-heart"></i> Just liked: article #{{likedNum}}</h6>
@@ -12,22 +23,22 @@
 
 
 
-
 <div class="row articles">
-  <div class="article col-sm-{{columns}}" *ngFor="let articleNum of articlesList ; let i = index;" >
-    <h2 class="h4">{{articleNum | addPrefix: articlesPrefix  }}</h2>
+  <div class="article col-sm-{{columns}}" *ngFor="let articleN of articles_hardCoded ; let i = index;" >
+    <h2 class="h4">{{articleN.title | addPrefix: articlesPrefix  }}</h2>
     <p>
-        <img class="img-fluid rounded"  src="//placeimg.com/{{imgWidth}}/{{imgHeight}}/tech?{{articleNum}}">
+        <img class="img-fluid rounded"  src="{{articleN.picture}}">
         <!-- <img class="img-fluid rounded"  [src]='imgUrl'> -->
     </p>
     <p>
-      <span class="badge badge-secondary">tech</span>
-    </p>
-    <p *ngIf="articleNum !== 'Third'">
-        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      <span class="badge badge-secondary">{{articleN.tag}}</span>
     </p>
     <p>
-      <a class="btn btn-primary text-white" (click)='likeThis(this.i)' role="button">like</a> <!-- btn-success -->
+      {{articleN.plot}}
+    </p>
+    <p>
+      <!-- ng class -->
+      <a class="btn btn-primary text-white" [ngClass]="{'btn-success': articleN.like }" (click)='likeThis(this.i)' role="button">like</a> 
     </p>
   </div>
 </div>
