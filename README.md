@@ -53,3 +53,5 @@ Strong typing and interface
 ng g i article 
 
 Lifecycle hooks
+ngOnInit
+ngOnChanges

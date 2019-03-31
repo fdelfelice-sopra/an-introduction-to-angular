@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms/src/directives';
 
 import {IArticle} from './article';
@@ -8,21 +8,19 @@ import {IArticle} from './article';
   templateUrl: './articles.component.html',
   styleUrls: ['./articles.component.less']
 })
-export class ArticlesComponent implements OnInit {
+export class ArticlesComponent implements OnInit , OnChanges {
   articlesTitle: string = 'Articles';
   articlesPrefix : string = 'Article';
   articlesFirtsList : any[] = ['First','Second','Third'];
-  imgWidth : number = 640;
-  imgHeight : number = 480;
-  imgUrl : string = '//placeimg.com/'+this.imgWidth+'/'+this.imgHeight+'/tech?1';
-  
+  changeLog:any = [];
+
   likedNum : number;
 
   likeThis(who:number): void{
     this.likedNum = who+1;
   }
 
-  columns : number;
+  @Input() columns : number;
 
   articles_hardCoded : IArticle[] =[
       {
@@ -58,6 +56,17 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit() {
     this.columns = 4;
+    console.log('1.' + this.columns);
   }
 
+  //detects changes to input properties of the component (not all changes!)
+  ngOnChanges(changes: SimpleChanges) {
+    for (let propName in changes) {
+      let chng = changes[propName];
+      let cur  = JSON.stringify(chng.currentValue);
+      let prev = JSON.stringify(chng.previousValue);
+      this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+      console.log(this.changeLog);
+    }
+  }
 }
