@@ -51,3 +51,5 @@ Retrieve page's Data: hard-coded data
 
 Strong typing and interface
 ng g i article 
+
+Lifecycle hooks

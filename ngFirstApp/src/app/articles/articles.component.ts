@@ -22,7 +22,7 @@ export class ArticlesComponent implements OnInit {
     this.likedNum = who+1;
   }
 
-  columns : number = 6;
+  columns : number;
 
   articles_hardCoded : IArticle[] =[
       {
@@ -57,6 +57,7 @@ export class ArticlesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.columns = 4;
   }
 
 }
