@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms/src/directives';
 
+import {IArticle} from './article';
+
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
@@ -22,7 +24,7 @@ export class ArticlesComponent implements OnInit {
 
   columns : number = 6;
 
-  articles_hardCoded : any[] =[
+  articles_hardCoded : IArticle[] =[
       {
         "id": 1,
         "title": "Article Title 1",
