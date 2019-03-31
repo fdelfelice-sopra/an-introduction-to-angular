@@ -44,4 +44,8 @@ Event binding
 
 Styling Components
 
-Pipes: transforming data
+Pipes: transforming data for a better presentation
+Create a custom pipe: ng g p shared/addPrefix
+
+
+
