@@ -1,26 +1,10 @@
-
-
-<h4>Listing Array's elements</h4>
-<div>
-    <ul class="list-unstyled">
-      <li  *ngFor="let articleNum of articlesFirtsList ; let i = index;" >
-      {{articleNum | uppercase  }}
-      </li>
-    </ul>
-</div>
-
-
 <h1>{{articlesTitle}} - grid: col-xs-{{columns}}</h1>
 
 <h6 *ngIf='likedNum > 0'><i class="fa fa-heart"></i> Just liked: article #{{likedNum}}</h6>
 
-
-
 <div class="alert alert-secondary text-center select-columns-num">
-  <label>Grid: col-xs-</label><input [(ngModel)]='columns' type="number" /> (Changing it will not trigger ngOnChange hook)
+  <label>Grid: col-xs-</label><input [(ngModel)]='columns' type="number" />
 </div>
-
-
 
 
 <div class="row articles">
