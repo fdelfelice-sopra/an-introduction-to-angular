@@ -55,3 +55,9 @@ ng g i article
 Lifecycle hooks
 ngOnInit
 ngOnChanges
+
+Nested Components
+ng g c shared/like-btn 
+@Input
+@Output
+EventEmitter

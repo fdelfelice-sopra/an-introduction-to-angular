@@ -14,12 +14,6 @@ export class ArticlesComponent implements OnInit , OnChanges {
   articlesFirtsList : any[] = ['First','Second','Third'];
   changeLog:any = [];
 
-  likedNum : number;
-
-  likeThis(who:number): void{
-    this.likedNum = who+1;
-  }
-
   @Input() columns : number;
 
   articles_hardCoded : IArticle[] =[
@@ -50,8 +44,6 @@ export class ArticlesComponent implements OnInit , OnChanges {
   ];
 
 
-
-
   constructor() { }
 
   ngOnInit() {
@@ -59,14 +51,10 @@ export class ArticlesComponent implements OnInit , OnChanges {
     console.log('1.' + this.columns);
   }
 
-  //detects changes to input properties of the component (not all changes!)
-  ngOnChanges(changes: SimpleChanges) {
-    for (let propName in changes) {
-      let chng = changes[propName];
-      let cur  = JSON.stringify(chng.currentValue);
-      let prev = JSON.stringify(chng.previousValue);
-      this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-      console.log(this.changeLog);
-    }
+  onNotify(notification:any):void{
+    //this.articlesTitle = message;
+    this.articles_hardCoded[notification[0]-1].like=notification[1];
   }
+
+
 }

@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { AddPrefixPipe } from './shared/add-prefix.pipe';
+import { LikeBtnComponent } from './shared/like-btn/like-btn.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesComponent,
-    AddPrefixPipe
+    AddPrefixPipe,
+    LikeBtnComponent
   ],
   imports: [
     BrowserModule,

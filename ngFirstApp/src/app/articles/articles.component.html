@@ -1,6 +1,5 @@
 <h1>{{articlesTitle}} - grid: col-xs-{{columns}}</h1>
 
-<h6 *ngIf='likedNum > 0'><i class="fa fa-heart"></i> Just liked: article #{{likedNum}}</h6>
 
 <div class="alert alert-secondary text-center select-columns-num">
   <label>Grid: col-xs-</label><input [(ngModel)]='columns' type="number" />
@@ -15,14 +14,14 @@
         <!-- <img class="img-fluid rounded"  [src]='imgUrl'> -->
     </p>
     <p>
-      <span class="badge badge-secondary">{{articleN.tag}}</span>
+      <span class="badge badge-secondary">{{articleN.tag}}</span> 
+       <span *ngIf='articleN.like' class="badge badge-success">Liked!</span>
     </p>
     <p>
       {{articleN.plot}}
     </p>
     <p>
-      <!-- ng class -->
-      <a class="btn btn-primary text-white" [ngClass]="{'btn-success': articleN.like }" (click)='likeThis(this.i)' role="button">like</a> 
+      <app-like-btn [like]='articleN.like' [id]='articleN.id' (likeClicked)='onNotify($event)'></app-like-btn>
     </p>
   </div>
 </div>
