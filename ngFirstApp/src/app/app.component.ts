@@ -9,6 +9,4 @@ export class AppComponent {
   title = 'ngFirstApp';
   year = new Date();
   columnNum = 4 ;
-
-
 }

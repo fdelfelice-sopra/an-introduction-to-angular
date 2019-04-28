@@ -7,7 +7,7 @@
 
 
 <div class="row articles">
-  <div class="article col-sm-{{columns}}" *ngFor="let articleN of articles_hardCoded ; let i = index;" >
+  <div class="article col-sm-{{columns}}" *ngFor="let articleN of articles ; let i = index;" >
     <h2 class="h4">{{articleN.title | addPrefix: articlesPrefix  }}</h2>
     <p>
         <img class="img-fluid rounded"  src="{{articleN.picture}}">

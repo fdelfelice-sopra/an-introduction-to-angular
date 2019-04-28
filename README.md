@@ -61,3 +61,9 @@ ng g c shared/like-btn
 @Input
 @Output
 EventEmitter
+
+Services
+Move data from component to services
+Build the service
+Register the service
+Inject the service
