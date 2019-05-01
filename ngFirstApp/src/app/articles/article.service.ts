@@ -1,42 +1,44 @@
 import {} from '@angular/core';
 import { IArticle } from './article';
 import { Injectable } from '@angular/core';
+import { HttpClient , HttpErrorResponse } from '@angular/common/http'
+import { Observable , throwError} from 'rxjs'
+import { catchError , tap , map} from 'rxjs/operators'
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class ArticleService{
-    getArticles() : IArticle[]{
-        //HERE TEMP DATA RETRIEVING
-        return [
-            {
-              "id": 1,
-              "title": "Article Title 1",
-              "picture": "https://placeimg.com/640/480/tech?1",
-              "plot": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
-              "tag": "tech",
-              "like": false
-            },
-            {
-              "id": 2,
-              "title": "Article Title 2",
-              "picture": "https://placeimg.com/640/480/tech?2",
-              "plot": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
-              "tag": "tech",
-              "like": true
-            },
-            {
-              "id": 3,
-              "title": "Article Title 3",
-              "picture": "https://placeimg.com/640/480/tech?3",
-              "plot": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
-              "tag": "tech",
-              "like": false
-            }
-        ]
-    }
 
+export class ArticleService{
+    
+    private articlesUrl = 'assets/articles.json'; //MOCK
+    //private articlesUrl = 'https://soprasteria--intro-to-express.herokuapp.com/api/v1/articles'
+
+    constructor( private http: HttpClient) { }
+    
+    getArticles(): Observable<IArticle[]> {
+        return this.http.get<IArticle[]>(this.articlesUrl).pipe(
+          tap(data => console.log('All: ' + JSON.stringify(data))),
+          catchError(this.handleError)
+        );
+      }
+
+      private handleError(err: HttpErrorResponse) {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        let errorMessage = '';
+        if (err.error instanceof ErrorEvent) {
+          // A client-side or network error occurred. Handle it accordingly.
+          errorMessage = `An error occurred: ${err.error.message}`;
+        } else {
+          // The backend returned an unsuccessful response code.
+          // The response body may contain clues as to what went wrong,
+          errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+        }
+        console.error(errorMessage);
+        return throwError(errorMessage);
+      } 
 
 }
 

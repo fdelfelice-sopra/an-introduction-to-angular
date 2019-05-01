@@ -67,3 +67,9 @@ Move data from component to services
 Build the service
 Register the service
 Inject the service
+
+Observable and reactive extension (manage asynchronous data)
+Sending Http request
+Register the http service provider
+Exception handling
+Subscribing to an observable

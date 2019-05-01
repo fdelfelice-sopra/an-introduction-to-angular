@@ -13,8 +13,10 @@ export class ArticlesComponent implements OnInit {
   articlesPrefix : string = 'Article';
   articlesFirtsList : any[] = ['First','Second','Third'];
   changeLog:any = [];
-
+  
   articles : IArticle[] = [];
+
+  errorMessage:string;
 
   @Input() columns : number;
 
@@ -26,7 +28,13 @@ export class ArticlesComponent implements OnInit {
     this.columns = 4;
     console.log('1.' + this.columns);
 
-    this.articles = this.articleService.getArticles();
+    this.articleService.getArticles().subscribe(
+      articles => {
+          this.articles=articles;          
+      },
+     error => this.errorMessage = <any>error //casting to any
+      
+  );
 
   }
 
