@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { AddPrefixPipe } from './shared/add-prefix.pipe';
 import { LikeBtnComponent } from './shared/like-btn/like-btn.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LikeBtnComponent } from './shared/like-btn/like-btn.component';
     AppComponent,
     ArticlesComponent,
     AddPrefixPipe,
-    LikeBtnComponent
+    LikeBtnComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

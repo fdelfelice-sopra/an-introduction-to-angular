@@ -73,3 +73,7 @@ Sending Http request
 Register the http service provider
 Exception handling
 Subscribing to an observable
+
+
+Routing
+Create Welcome component: ng g c welcome
