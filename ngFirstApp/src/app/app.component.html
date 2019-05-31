@@ -1,22 +1,19 @@
 <nav class="navbar navbar-dark bg-dark shadow-sm">
   <div class="container">
       <a class="navbar-brand" href="">Welcome to {{ title }}!</a>
+      <ul class="nav navpills">
+            <li><a class='nav-link' [routerLink]="['/welcome']" >Welcome</a></li>
+            <li><a class='nav-link' routerLink="/articles" >Articles list</a></li> <!-- SHORTCUT FOR routing-->
+        </ul>
   </div>
 </nav>
-
-<app-welcome></app-welcome>
-
 <div class="container">
-   
-  <app-articles [columns]="columnNum" ></app-articles>
-  
-  <hr>
+    <main class="pt-md-3">
+        <router-outlet></router-outlet>
+    </main>
+    <hr>
 
-  <footer>
-      <p>©{{ title }} : {{year | date:'dd/MM/yy'}}</p>
-  </footer>
+    <footer>
+        <p>©{{ title }} : {{year | date:'dd/MM/yy'}}</p>
+    </footer>
 </div>
-
-
-
-<router-outlet></router-outlet>

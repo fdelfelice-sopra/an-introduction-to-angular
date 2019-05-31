@@ -75,5 +75,6 @@ Exception handling
 Subscribing to an observable
 
 
-Routing
-Create Welcome component: ng g c welcome
+Basic routing
+Navigate among components:
+Import RouterModule to app module and bind to a link parameters array
