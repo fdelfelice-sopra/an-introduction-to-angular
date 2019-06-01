@@ -21,6 +21,10 @@
       {{articleN.plot}}
     </p>
     <p>
+      <a [routerLink]="['/articles' , articleN.id ]">Read more...</a>
+    </p>
+
+    <p>
       <app-like-btn [like]='articleN.like' [id]='articleN.id' (likeClicked)='onNotify($event)'></app-like-btn>
     </p>
   </div>
