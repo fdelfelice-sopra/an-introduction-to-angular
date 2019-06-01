@@ -1,3 +1,27 @@
-<p>
-  article-detail works!
-</p>
+
+<div *ngIf='!article' >
+    <h3 class="text-center">Sorry: no article found here</h3>
+</div>
+
+<div  *ngIf='article'>
+  <h1>{{article.title}}</h1>
+
+  <p>
+      <span class="badge badge-secondary">{{article.tag}}</span> 
+      <span *ngIf='article.like' class="badge badge-success">Liked!</span>
+  </p>
+
+  <p>
+      <img class="img-fluid rounded"  src="{{article.picture}}">
+  </p>
+
+
+  <p>
+      {{article.plot}}<br>
+      {{article.plot}}
+  </p>
+  <p>
+      {{article.plot}}<br>
+      {{article.plot}}
+  </p>
+</div>

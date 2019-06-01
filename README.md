@@ -78,3 +78,10 @@ Subscribing to an observable
 Basic routing
 Navigate among components:
 Import RouterModule to app module and bind to a link parameters array
+
+
+Routing: passing/reading parameter
+Add parameter in routerModule  
+Retrieve paramenter in target component, importing and use ActivatedRoute 
+
+Routing: add method to get Item by id

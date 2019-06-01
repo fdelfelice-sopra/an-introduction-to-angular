@@ -1,4 +1,3 @@
-import {} from '@angular/core';
 import { IArticle } from './article';
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpErrorResponse } from '@angular/common/http'
@@ -24,6 +23,14 @@ export class ArticleService{
         );
       }
       
+
+      getArticle(id: number): Observable<IArticle | undefined> {
+        return this.getArticles().pipe(
+          map((articles: IArticle[]) => articles.find(p => p.id === id))
+        );
+      }  
+
+
       private handleError(err: HttpErrorResponse) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console

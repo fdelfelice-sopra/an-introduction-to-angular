@@ -8,9 +8,9 @@
 
 <div class="row articles">
   <div class="article col-sm-{{columns}}" *ngFor="let articleN of articles ; let i = index;" >
-    <h2 class="h4">{{articleN.title | addPrefix: articlesPrefix  }}</h2>
+    <h2 class="h4"><a [routerLink]="['/articles' , articleN.id ]" class="text-dark">{{articleN.title | addPrefix: articlesPrefix  }}</a></h2>
     <p>
-        <img class="img-fluid rounded"  src="{{articleN.picture}}">
+        <a [routerLink]="['/articles' , articleN.id ]"><img class="img-fluid rounded"  src="{{articleN.picture}}"></a>
         <!-- <img class="img-fluid rounded"  [src]='imgUrl'> -->
     </p>
     <p>
