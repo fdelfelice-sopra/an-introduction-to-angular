@@ -87,3 +87,7 @@ Retrieve paramenter in target component, importing and use ActivatedRoute
 Routing: add method to get Item by id
 
 Routing: activate a route on event
+
+Routing: adding a Guard
+Create a guard: ng g g articles/article-detail
+add Guard in app.module routing

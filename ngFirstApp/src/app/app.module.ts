@@ -12,6 +12,7 @@ import { AddPrefixPipe } from './shared/add-prefix.pipe';
 import { LikeBtnComponent } from './shared/like-btn/like-btn.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ArticleDetailComponent } from './articles/article-detail.component';
+import { ArticleDetailGuard } from './articles/article-detail.guard';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import { ArticleDetailComponent } from './articles/article-detail.component';
     RouterModule.forRoot([
       {path: 'welcome' , component : WelcomeComponent },
       {path: 'articles' , component : ArticlesComponent },
-      {path: 'articles/:id' , component : ArticleDetailComponent },//send 'id' parameter
+      {path: 'articles/:id' ,  
+        canActivate: [ArticleDetailGuard], //Guard
+        component : ArticleDetailComponent },//send 'id' parameter
       {path: '' , redirectTo : 'welcome' , pathMatch : 'full' }, //default
       {path: '**' , redirectTo : 'welcome' , pathMatch : 'full' } //**  wildcard selected if no previous path matches
     ]),
