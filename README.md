@@ -85,3 +85,5 @@ Add parameter in routerModule
 Retrieve paramenter in target component, importing and use ActivatedRoute 
 
 Routing: add method to get Item by id
+
+Routing: activate a route on event

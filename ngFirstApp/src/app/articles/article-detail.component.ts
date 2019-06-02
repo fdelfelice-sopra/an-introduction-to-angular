@@ -15,11 +15,11 @@ export class ArticleDetailComponent implements OnInit {
   article: IArticle | undefined;
 
   constructor(private route:ActivatedRoute,
-              private articleService: ArticleService
+              private articleService: ArticleService,
+              private router: Router
               ) {
     
    }
-
 
    ngOnInit() {
     const param = this.route.snapshot.paramMap.get('id');
@@ -35,7 +35,7 @@ export class ArticleDetailComponent implements OnInit {
       error => this.errorMessage = <any>error);
   }
 
-
-
-
+  onBack(): void {
+    this.router.navigate(['/articles']);
+  }
 }
